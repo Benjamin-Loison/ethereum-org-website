@@ -29,7 +29,7 @@ There is a difference between looking something up in the 'trie' and the underly
 
 The update and delete operations for radix tries can be defined as follows:
 
-```
+```python
     def update(node,path,value):
         if path == '':
             curnode = db.get(node) if node else [ NULL ] * 17
@@ -102,7 +102,7 @@ The flagging of both _odd vs. even remaining partial path length_ and _leaf vs. 
 
 For even remaining path length (`0` or `2`), another `0` "padding" nibble will always follow.
 
-```
+```python
     def compact_encode(hexarray):
         term = 1 if hexarray[-1] == 16 else 0
         if term: hexarray = hexarray[:-1]
@@ -134,7 +134,7 @@ Examples:
 
 Here is the extended code for getting a node in the Merkle Patricia trie:
 
-```
+```python
     def get_helper(node,path):
         if path == []: return node
         if node = '': return ''
